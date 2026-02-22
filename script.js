@@ -89,11 +89,19 @@ const quizScreenEl = document.getElementById("quiz-screen");
 const resultScreenEl = document.getElementById("result-screen");
 const resultTitleEl = document.getElementById("result-title");
 const resultDescriptionEl = document.getElementById("result-description");
-const scoreLineEl = document.getElementById("score-line");
-const restartBtnEl = document.getElementById("restart-btn");
+const backBtnEl = document.getElementById("back-btn");
+const shareWhatsAppEl = document.getElementById("share-whatsapp");
+const shareEmailEl = document.getElementById("share-email");
+const shareLinkedInEl = document.getElementById("share-linkedin");
+const shareNativeEl = document.getElementById("share-native");
 
 let currentQuestion = 0;
 let totalScore = 0;
+const selectedScores = [];
+
+function updateBackButtonState() {
+  backBtnEl.disabled = currentQuestion === 0;
+}
 
 function renderQuestion() {
   const questionData = quizData[currentQuestion];
@@ -101,6 +109,7 @@ function renderQuestion() {
   progressTextEl.textContent = `Pergunta ${currentQuestion + 1} de ${quizData.length}`;
   questionEl.textContent = questionData.question;
   answersEl.innerHTML = "";
+  updateBackButtonState();
 
   questionData.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -113,7 +122,8 @@ function renderQuestion() {
 }
 
 function handleAnswer(score) {
-  totalScore += score;
+  selectedScores[currentQuestion] = score;
+  totalScore = selectedScores.reduce((acc, value) => acc + value, 0);
   currentQuestion += 1;
 
   if (currentQuestion < quizData.length) {
@@ -124,8 +134,45 @@ function handleAnswer(score) {
   showResult();
 }
 
+function handleBack() {
+  if (currentQuestion === 0) {
+    return;
+  }
+
+  currentQuestion -= 1;
+  selectedScores.splice(currentQuestion, 1);
+  totalScore = selectedScores.reduce((acc, value) => acc + value, 0);
+  renderQuestion();
+}
+
 function getResultByScore(score) {
   return resultRules.find((rule) => score >= rule.min) || resultRules[resultRules.length - 1];
+}
+
+function buildShareLinks(result) {
+  const pageUrl = window.location.href;
+  const shareText = `Meu resultado no quiz de consciência interior foi: ${result.profile}. Faça também!`;
+
+  shareWhatsAppEl.href = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${pageUrl}`)}`;
+  shareEmailEl.href = `mailto:?subject=${encodeURIComponent("Meu resultado no Quiz de Consciência Interior")}&body=${encodeURIComponent(`${shareText}\n\n${pageUrl}`)}`;
+  shareLinkedInEl.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`;
+
+  shareNativeEl.onclick = async () => {
+    if (navigator.share) {
+      await navigator.share({
+        title: "Quiz de Consciência Interior",
+        text: shareText,
+        url: pageUrl,
+      });
+      return;
+    }
+
+    await navigator.clipboard.writeText(`${shareText} ${pageUrl}`);
+    shareNativeEl.textContent = "Link copiado!";
+    setTimeout(() => {
+      shareNativeEl.textContent = "Mais opções";
+    }, 1500);
+  };
 }
 
 function showResult() {
@@ -133,25 +180,15 @@ function showResult() {
 
   quizScreenEl.classList.add("hidden");
   resultScreenEl.classList.remove("hidden");
-  restartBtnEl.classList.remove("hidden");
+  backBtnEl.classList.add("hidden");
 
   progressTextEl.textContent = "Resultado final";
   resultTitleEl.textContent = result.profile;
   resultDescriptionEl.textContent = result.description;
-  scoreLineEl.textContent = `Sua pontuação: ${totalScore} pontos.`;
+
+  buildShareLinks(result);
 }
 
-function restartQuiz() {
-  currentQuestion = 0;
-  totalScore = 0;
-
-  resultScreenEl.classList.add("hidden");
-  restartBtnEl.classList.add("hidden");
-  quizScreenEl.classList.remove("hidden");
-
-  renderQuestion();
-}
-
-restartBtnEl.addEventListener("click", restartQuiz);
+backBtnEl.addEventListener("click", handleBack);
 
 renderQuestion();

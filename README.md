@@ -1,8 +1,16 @@
 # Quiz Interativo: Qual é o seu perfil de consciência interior?
 
-Projeto em HTML, CSS e JavaScript puro com perguntas exibidas uma por vez, pontuação acumulada automaticamente e resultado personalizado por faixa de pontos.
+Projeto em HTML, CSS e JavaScript puro com perguntas exibidas uma por vez e resultado final em texto personalizado por faixa de respostas.
 
 Tema: meditação, autoconhecimento e espiritualidade interior.
+
+## Novidades de interface
+
+- Logo centralizado no topo sobre o fundo azul (`assets/logo-ocp.svg`).
+- Botão **Voltar** com ícone para ajustar a resposta anterior.
+- Ações de **compartilhamento** ao final (WhatsApp, e-mail, LinkedIn e compartilhamento nativo/cópia de link).
+- Resultado final exibido apenas em texto (sem mostrar pontuação numérica).
+- Fluxo sem botão de refazer quiz.
 
 ## Como executar
 
