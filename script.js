@@ -1,56 +1,56 @@
 const quizData = [
   {
-    question: "Quando surge um novo projeto na equipe, qual é sua primeira reação?",
+    question: "Ao começar o dia, como você costuma se conectar consigo?",
     answers: [
-      { text: "Organizo um plano detalhado antes de começar.", score: 4 },
-      { text: "Busco ideias criativas e diferentes abordagens.", score: 3 },
-      { text: "Quero conversar com todos para alinhar expectativas.", score: 2 },
-      { text: "Mergulho direto para testar na prática.", score: 1 },
+      { text: "Faço uma respiração consciente e observo meu estado interno.", score: 4 },
+      { text: "Busco silêncio por alguns minutos para me centrar.", score: 3 },
+      { text: "Anoto sentimentos e pensamentos em um diário.", score: 2 },
+      { text: "Sigo no automático e percebo isso só mais tarde.", score: 1 },
     ],
   },
   {
-    question: "Qual atividade mais te energiza no trabalho?",
+    question: "Quando emoções intensas surgem, o que você faz primeiro?",
     answers: [
-      { text: "Analisar dados e encontrar padrões.", score: 4 },
-      { text: "Criar algo novo do zero.", score: 3 },
-      { text: "Facilitar a colaboração entre pessoas.", score: 2 },
-      { text: "Resolver urgências com agilidade.", score: 1 },
+      { text: "Acolho a emoção sem julgamento e respiro fundo.", score: 4 },
+      { text: "Procuro compreender a origem do que estou sentindo.", score: 3 },
+      { text: "Converso com alguém de confiança para clarear.", score: 2 },
+      { text: "Tento distrair a mente para evitar sentir.", score: 1 },
     ],
   },
   {
-    question: "Como você lida com prazos apertados?",
+    question: "Qual prática mais faz sentido para sua jornada interior?",
     answers: [
-      { text: "Priorizo tarefas com método e foco em eficiência.", score: 4 },
-      { text: "Adapto o plano e encontro soluções alternativas.", score: 3 },
-      { text: "Reforço a comunicação para manter todos alinhados.", score: 2 },
-      { text: "Atuo rapidamente e ajusto no caminho.", score: 1 },
+      { text: "Meditação diária com foco em presença.", score: 4 },
+      { text: "Rituais de gratidão e contemplação.", score: 3 },
+      { text: "Leituras e reflexões sobre autoconhecimento.", score: 2 },
+      { text: "Ainda estou descobrindo por onde começar.", score: 1 },
     ],
   },
   {
-    question: "Em reuniões, qual papel você costuma assumir?",
+    question: "Como você enxerga os desafios que aparecem na sua vida?",
     answers: [
-      { text: "Estruturo discussões e aponto próximos passos.", score: 4 },
-      { text: "Trago insights e possibilidades inovadoras.", score: 3 },
-      { text: "Mediador, garantindo que todos sejam ouvidos.", score: 2 },
-      { text: "Impulsiono decisões rápidas e objetivas.", score: 1 },
+      { text: "Como oportunidades de expansão e aprendizado espiritual.", score: 4 },
+      { text: "Como convites para rever padrões internos.", score: 3 },
+      { text: "Como momentos difíceis, mas que trazem lições.", score: 2 },
+      { text: "Como obstáculos que eu só quero superar rápido.", score: 1 },
     ],
   },
   {
-    question: "Qual dessas habilidades melhor te representa?",
+    question: "No contato com outras pessoas, o que mais guia suas atitudes?",
     answers: [
-      { text: "Planejamento e visão estratégica.", score: 4 },
-      { text: "Criatividade e pensamento fora da caixa.", score: 3 },
-      { text: "Empatia e relacionamento interpessoal.", score: 2 },
-      { text: "Execução prática e resiliência.", score: 1 },
+      { text: "Escuta compassiva e presença genuína.", score: 4 },
+      { text: "Empatia e respeito pelos diferentes caminhos.", score: 3 },
+      { text: "Boa intenção, mesmo com dificuldade de manter calma.", score: 2 },
+      { text: "Reatividade quando me sinto pressionado(a).", score: 1 },
     ],
   },
   {
-    question: "Qual ambiente de trabalho combina mais com você?",
+    question: "Quando pensa no seu propósito, qual frase mais ressoa?",
     answers: [
-      { text: "Processos claros, metas e acompanhamento constante.", score: 4 },
-      { text: "Liberdade para experimentar e inovar.", score: 3 },
-      { text: "Cultura colaborativa com foco em pessoas.", score: 2 },
-      { text: "Dinâmico, com desafios contínuos e ação rápida.", score: 1 },
+      { text: "Quero viver com consciência e alinhamento interior.", score: 4 },
+      { text: "Quero evoluir e compartilhar luz com o mundo.", score: 3 },
+      { text: "Quero entender melhor quem sou e o que sinto.", score: 2 },
+      { text: "Ainda me sinto desconectado(a) desse tema.", score: 1 },
     ],
   },
 ];
@@ -58,27 +58,27 @@ const quizData = [
 const resultRules = [
   {
     min: 21,
-    profile: "Perfil A — Estrategista",
+    profile: "Perfil A — Presença Desperta",
     description:
-      "Você se destaca por organização, visão de longo prazo e decisões baseadas em análise.",
+      "Você cultiva atenção plena, serenidade e conexão profunda com sua essência no dia a dia.",
   },
   {
     min: 16,
-    profile: "Perfil B — Inovador(a)",
+    profile: "Perfil B — Buscador(a) de Luz",
     description:
-      "Seu diferencial está em criatividade, adaptabilidade e busca constante por novas ideias.",
+      "Você está em uma jornada ativa de expansão interior, integrando práticas e aprendizados com constância.",
   },
   {
     min: 11,
-    profile: "Perfil C — Colaborador(a)",
+    profile: "Perfil C — Coração em Despertar",
     description:
-      "Você brilha em comunicação, trabalho em equipe e construção de ambientes saudáveis.",
+      "Você já percebe os chamados internos e está desenvolvendo mais escuta, acolhimento e autoconhecimento.",
   },
   {
     min: 0,
-    profile: "Perfil D — Executor(a)",
+    profile: "Perfil D — Início da Jornada",
     description:
-      "Você tem perfil prático, foco em ação e capacidade de entregar resultados em contextos dinâmicos.",
+      "Você está dando os primeiros passos para olhar para dentro. Pequenas práticas diárias podem transformar muito.",
   },
 ];
 

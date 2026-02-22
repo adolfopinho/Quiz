@@ -1,6 +1,8 @@
-# Quiz Interativo: Qual é o seu perfil profissional?
+# Quiz Interativo: Qual é o seu perfil de consciência interior?
 
 Projeto em HTML, CSS e JavaScript puro com perguntas exibidas uma por vez, pontuação acumulada automaticamente e resultado personalizado por faixa de pontos.
+
+Tema: meditação, autoconhecimento e espiritualidade interior.
 
 ## Como executar
 
