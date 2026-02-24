@@ -1,1 +1,61 @@
-<h1>teste na nuvem do git À NOITE EM TEMPO REAL DIRETO DA NUVEM</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz de Consciência Interior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img class="brand-logo" src="assets/logo-ocp.svg" alt="Organização OCP" />
+
+    <main class="app">
+      <section class="card" aria-live="polite">
+        <header class="card__header">
+          <p class="badge">Quiz de Autodescoberta</p>
+          <h1>Qual é o seu perfil de consciência interior?</h1>
+          <p class="subtitle" id="progress-text">Pergunta 1 de 6</p>
+        </header>
+
+        <div id="quiz-screen">
+          <h2 id="question" class="question"></h2>
+          <div id="answers" class="answers"></div>
+        </div>
+
+        <div id="result-screen" class="result hidden">
+          <h2 id="result-title"></h2>
+          <p id="result-description"></p>
+
+          <div class="share-section">
+            <p class="share-title">Compartilhar resultado:</p>
+            <div class="share-actions">
+              <a id="share-whatsapp" class="btn btn--share" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a id="share-email" class="btn btn--share" target="_blank" rel="noopener noreferrer">E-mail</a>
+              <a id="share-linkedin" class="btn btn--share" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <button id="share-native" class="btn btn--share" type="button">Mais opções</button>
+            </div>
+          </div>
+        </div>
+
+        <footer class="card__footer">
+          <button id="back-btn" class="btn btn--secondary" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M14.75 5.75L8.5 12l6.25 6.25" />
+              </svg>
+            </span>
+            Voltar
+          </button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

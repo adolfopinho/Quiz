@@ -1,0 +1,21 @@
+<svg width="280" height="90" viewBox="0 0 280 90" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Organização OCP</title>
+  <desc id="desc">Logo textual estilizada da Organização OCP.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8,14)">
+    <circle cx="24" cy="24" r="22" fill="url(#g2)" opacity="0.2"/>
+    <path d="M24 2L30 18L46 24L30 30L24 46L18 30L2 24L18 18L24 2Z" fill="url(#g1)"/>
+    <circle cx="24" cy="24" r="8" fill="#fff" opacity="0.9"/>
+  </g>
+  <text x="68" y="30" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#0F2E63">ORGANIZAÇÃO</text>
+  <text x="68" y="66" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="800" fill="#1D63D1">OCP</text>
+</svg>
